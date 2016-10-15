@@ -1,0 +1,13 @@
+{% extends 'student/base.html' %}
+
+
+{% block content %}
+    {% for student in students %}
+        <div class="post">
+            <b><p>Published: {{student.published_date}}</p></b>
+            <h1>Trainer Name : <a href="{% url 'student_detail' pk=student.pk %}">{{student.trainer}}</a></h1>
+            <h3>Placement Student Name : <a href="">{{student.placement_student_name}}</a></h3>
+            <p>Trainers Remarks : {{student.remarks|linebreaksbr}}</p>
+        </div>
+    {% endfor %}
+{% endblock %}

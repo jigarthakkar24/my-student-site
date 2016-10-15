@@ -1,0 +1,14 @@
+{% extends 'student/base.html' %}
+
+{% block content %}
+    <div class="post">
+        {% if student.published_date %}
+            <div class="date">
+                {{ student.published_date }}
+            </div>
+        {% endif %}
+        <a class="btn btn-default" href="{% url 'student_edit' pk=student.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        <h1>{{ student.trainer }}</h1>
+        <p>{{ student.remarks|linebreaksbr }}</p>
+    </div>
+{% endblock %}
